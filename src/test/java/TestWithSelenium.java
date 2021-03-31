@@ -16,10 +16,10 @@ import java.util.Map;
 
 public class TestWithSelenium {
 
-    private static final String email = "";
-    private static final String email2 = "";
+    private static final String email = "bicago7317@heroulo.com";
+    private static final String email2 = "DataTes58765956";
     private static final String wrongEmail = "asasq3@221.1";
-    private static final String password = "";
+    private static final String password = "Aa123456";
     private static final String trueLink = "hromadske.ua";
     private static final String err = "Мы заметили несколько необычных попыток входа в вашу учетную запись. С целью обеспечения ее безопасности просим вас ввести свой номер телефона или имя пользователя, чтобы подтвердить, что это действительно вы.";
     private static final String wrongData = "Введенные адрес электронной почты и пароль не совпадают с сохраненными в нашей базе данных. Проверьте правильность введенных данных и повторите попытку.";
@@ -42,7 +42,7 @@ public class TestWithSelenium {
 
 
 
-        LoginPage loginPage = new LoginPage(driver, waiter);
+        //LoginPage loginPage = new LoginPage(driver, waiter);
 
         driver.get("https://twitter.com");
         waiter.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@href=\"/login\"]")));

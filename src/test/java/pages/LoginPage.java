@@ -23,11 +23,11 @@ public class LoginPage {
     private By byNamePass = By.name("session[password]");
     private By byXpathLogButton = By.xpath("//*[@id=\"react-root\"]/div/div/div[2]/main/div/div/div[2]/form/div/div[3]/div");
 
-    private By byTagDiv = By.tagName("div");
+  //  private By byTagDiv = By.tagName("div");
 
     private By byCssButton = By.cssSelector("[href=\"/login\"]");
 
-    private By byCssSelectorAcceptCookies = By.cssSelector("._42ft._4jy0._9o-t._4jy3._4jy1.selected._51sy");
+  //  private By byCssSelectorAcceptCookies = By.cssSelector("._42ft._4jy0._9o-t._4jy3._4jy1.selected._51sy");
 
 
     private By byCssAbout = By.cssSelector("#react-root > div > div > div.css-1dbjc4n.r-18u37iz.r-13qz1uu.r-417010 > header > div > div > div > div:nth-child(1) > div.css-1dbjc4n.r-1awozwy.r-15zivkp.r-1bymd8e.r-13qz1uu > nav > a:nth-child(7)");
