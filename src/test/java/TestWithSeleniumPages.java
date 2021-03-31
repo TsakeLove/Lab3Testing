@@ -12,6 +12,7 @@ import pages.LoginPage;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 
 public class TestWithSeleniumPages {
@@ -32,6 +33,8 @@ public class TestWithSeleniumPages {
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--headless");
         System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver");
+
+    //    webDriver.manage().window().maximize();
         System.out.println("Test start");
     }
 
@@ -39,6 +42,7 @@ public class TestWithSeleniumPages {
     public void testAuthName() {
 
         WebDriver driver =  new ChromeDriver();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         WebDriverWait waiter = createWebDriverWait(driver);
 
         LoginPage loginPage = new LoginPage(driver, waiter);
