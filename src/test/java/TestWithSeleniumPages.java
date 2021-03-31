@@ -49,73 +49,73 @@ public class TestWithSeleniumPages {
         driver.quit();
     }
 
-    @Test
-    public void testLastTwit() {
-        WebDriver driver = createWebDriver();
-        WebDriverWait waiter = createWebDriverWait(driver);
-
-        LoginPage loginPage = new LoginPage(driver, waiter);
-        loginPage.loginValidUser(email, password, email2);
-
-        // go to main page
-        waiter.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("   //*[@id=\"react-root\"]/div/div/div[2]/header/div/div/div/div[1]/div[2]/nav/a[1]")));
-        driver.findElement(By.xpath("//*[@id=\"react-root\"]/div/div/div[2]/header/div/div/div/div[1]/div[2]/nav/a[1]")).click();
-        waiter.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"react-root\"]/div/div/div[2]/main/div/div/div/div/div/div[4]/div/div/section/div/div/div/div/div/div/div[2]/div[1]/div[1]/a/div/div[1]/div[1]/span/span")));
-        //new post
-        String hello = driver.findElement(By.xpath("//*[@id=\"react-root\"]/div/div/div[2]/main/div/div/div/div/div/div[4]/div/div/section/div/div/div/div/div/div/div[2]/div[1]/div[1]/a/div/div[1]/div[1]/span/span")).getText();
-        driver.findElement(By.xpath("//*[@id=\"react-root\"]/div/div/div[2]/main/div/div/div/div/div/div[2]/div/div[2]/div[1]/div/div/div/div[2]/div[1]/div/div/div/div/div/div/div/div/div/div[1]/div/div/div/div[2]/div/div/div/div")).sendKeys("Hello, " + hello);
-        driver.findElement(By.xpath("//*[@id=\"react-root\"]/div/div/div[2]/main/div/div/div/div/div/div[2]/div/div[2]/div[1]/div/div/div/div[2]/div[4]/div/div/div[2]/div[3]")).click();
-        waiter.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"react-root\"]/div/div/div[2]/main/div/div/div/div/div/div[4]/div/div/section/div/div/div[1]/div/div/article/div/div/div/div[2]/div[2]/div[2]/div[1]/div/span")));
-        String lastTwit = driver.findElement(By.xpath("//*[@id=\"react-root\"]/div/div/div[2]/main/div/div/div/div/div/div[4]/div/div/section/div/div/div[1]/div/div/article/div/div/div/div[2]/div[2]/div[2]/div[1]/div/span")).getText();
-
-        Assert.assertNotEquals("Hello , " + hello, lastTwit);
-
-        driver.quit();
-    }
-
-    @Test
-    public void testLinkText() {
-        WebDriver driver = createWebDriver();
-        WebDriverWait waiter = createWebDriverWait(driver);
-
-        driver.get("https://twitter.com/HromadskeUA");
-
-        waiter.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#react-root > div > div > div.css-1dbjc4n.r-18u37iz.r-13qz1uu.r-417010 > main > div > div > div > div > div > div:nth-child(2) > div > div > div:nth-child(1) > div.css-1dbjc4n.r-1ifxtd0.r-ymttw5.r-ttdzmv > div.css-1dbjc4n.r-6gpygo.r-14gqq1x > div > div > div.css-1dbjc4n.r-1awozwy.r-18u37iz.r-dnmrzs > div > span:nth-child(1) > span")));
-        String errorLink = driver.findElement(By.linkText("hromadske.ua/donate")).getText();
-        Assert.assertEquals(trueLink, errorLink);
-        driver.quit();
-    }
-
-    @Test
-    public void testErrorText() {
-        WebDriver driver = createWebDriver();
-        WebDriverWait waiter = createWebDriverWait(driver);
-
-        LoginPage loginPage = new LoginPage(driver, waiter);
-        loginPage.loginForCheck(email, password);
-
-        waiter.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#react-root > div > div > div.css-1dbjc4n.r-13qz1uu.r-417010 > main > div > div > div:nth-child(1) > div > span")));
-
-        String willSee = driver.findElement(By.cssSelector("#react-root > div > div > div.css-1dbjc4n.r-13qz1uu.r-417010 > main > div > div > div:nth-child(1) > div > span")).getText();
-        Assert.assertEquals(willSee, err);
-
-
-        driver.quit();
-    }
-
-    @Test
-    public void testSignUpWithWrongEmail() {
-        WebDriver driver = createWebDriver();
-        WebDriverWait waiter = createWebDriverWait(driver);
-
-        LoginPage loginPage = new LoginPage(driver, waiter);
-        loginPage.loginForCheck(wrongEmail, password);
-        waiter.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#react-root > div > div > div.css-1dbjc4n.r-13qz1uu.r-417010 > main > div > div > div:nth-child(3) > div > div > a:nth-child(1)")));
-
-        String trueData = driver.findElement(By.cssSelector("#react-root > div > div > div.css-1dbjc4n.r-13qz1uu.r-417010 > main > div > div > div:nth-child(1) > div > div > div > div > div > div")).getText();
-        Assert.assertEquals(trueData, wrongData);
-        driver.quit();
-    }
+//    @Test
+//    public void testLastTwit() {
+//        WebDriver driver = createWebDriver();
+//        WebDriverWait waiter = createWebDriverWait(driver);
+//
+//        LoginPage loginPage = new LoginPage(driver, waiter);
+//        loginPage.loginValidUser(email, password, email2);
+//
+//        // go to main page
+//        waiter.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("   //*[@id=\"react-root\"]/div/div/div[2]/header/div/div/div/div[1]/div[2]/nav/a[1]")));
+//        driver.findElement(By.xpath("//*[@id=\"react-root\"]/div/div/div[2]/header/div/div/div/div[1]/div[2]/nav/a[1]")).click();
+//        waiter.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"react-root\"]/div/div/div[2]/main/div/div/div/div/div/div[4]/div/div/section/div/div/div/div/div/div/div[2]/div[1]/div[1]/a/div/div[1]/div[1]/span/span")));
+//        //new post
+//        String hello = driver.findElement(By.xpath("//*[@id=\"react-root\"]/div/div/div[2]/main/div/div/div/div/div/div[4]/div/div/section/div/div/div/div/div/div/div[2]/div[1]/div[1]/a/div/div[1]/div[1]/span/span")).getText();
+//        driver.findElement(By.xpath("//*[@id=\"react-root\"]/div/div/div[2]/main/div/div/div/div/div/div[2]/div/div[2]/div[1]/div/div/div/div[2]/div[1]/div/div/div/div/div/div/div/div/div/div[1]/div/div/div/div[2]/div/div/div/div")).sendKeys("Hello, " + hello);
+//        driver.findElement(By.xpath("//*[@id=\"react-root\"]/div/div/div[2]/main/div/div/div/div/div/div[2]/div/div[2]/div[1]/div/div/div/div[2]/div[4]/div/div/div[2]/div[3]")).click();
+//        waiter.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"react-root\"]/div/div/div[2]/main/div/div/div/div/div/div[4]/div/div/section/div/div/div[1]/div/div/article/div/div/div/div[2]/div[2]/div[2]/div[1]/div/span")));
+//        String lastTwit = driver.findElement(By.xpath("//*[@id=\"react-root\"]/div/div/div[2]/main/div/div/div/div/div/div[4]/div/div/section/div/div/div[1]/div/div/article/div/div/div/div[2]/div[2]/div[2]/div[1]/div/span")).getText();
+//
+//        Assert.assertNotEquals("Hello , " + hello, lastTwit);
+//
+//        driver.quit();
+//    }
+//
+//    @Test
+//    public void testLinkText() {
+//        WebDriver driver = createWebDriver();
+//        WebDriverWait waiter = createWebDriverWait(driver);
+//
+//        driver.get("https://twitter.com/HromadskeUA");
+//
+//        waiter.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#react-root > div > div > div.css-1dbjc4n.r-18u37iz.r-13qz1uu.r-417010 > main > div > div > div > div > div > div:nth-child(2) > div > div > div:nth-child(1) > div.css-1dbjc4n.r-1ifxtd0.r-ymttw5.r-ttdzmv > div.css-1dbjc4n.r-6gpygo.r-14gqq1x > div > div > div.css-1dbjc4n.r-1awozwy.r-18u37iz.r-dnmrzs > div > span:nth-child(1) > span")));
+//        String errorLink = driver.findElement(By.linkText("hromadske.ua/donate")).getText();
+//        Assert.assertEquals(trueLink, errorLink);
+//        driver.quit();
+//    }
+//
+//    @Test
+//    public void testErrorText() {
+//        WebDriver driver = createWebDriver();
+//        WebDriverWait waiter = createWebDriverWait(driver);
+//
+//        LoginPage loginPage = new LoginPage(driver, waiter);
+//        loginPage.loginForCheck(email, password);
+//
+//        waiter.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#react-root > div > div > div.css-1dbjc4n.r-13qz1uu.r-417010 > main > div > div > div:nth-child(1) > div > span")));
+//
+//        String willSee = driver.findElement(By.cssSelector("#react-root > div > div > div.css-1dbjc4n.r-13qz1uu.r-417010 > main > div > div > div:nth-child(1) > div > span")).getText();
+//        Assert.assertEquals(willSee, err);
+//
+//
+//        driver.quit();
+//    }
+//
+//    @Test
+//    public void testSignUpWithWrongEmail() {
+//        WebDriver driver = createWebDriver();
+//        WebDriverWait waiter = createWebDriverWait(driver);
+//
+//        LoginPage loginPage = new LoginPage(driver, waiter);
+//        loginPage.loginForCheck(wrongEmail, password);
+//        waiter.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#react-root > div > div > div.css-1dbjc4n.r-13qz1uu.r-417010 > main > div > div > div:nth-child(3) > div > div > a:nth-child(1)")));
+//
+//        String trueData = driver.findElement(By.cssSelector("#react-root > div > div > div.css-1dbjc4n.r-13qz1uu.r-417010 > main > div > div > div:nth-child(1) > div > div > div > div > div > div")).getText();
+//        Assert.assertEquals(trueData, wrongData);
+//        driver.quit();
+//    }
 
 
     @After
