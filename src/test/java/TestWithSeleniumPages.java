@@ -27,6 +27,10 @@ public class TestWithSeleniumPages {
 
     @Before
     public void SetUp() {
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--headless");
         System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver");
         System.out.println("Test start");
     }
