@@ -1,4 +1,5 @@
 import org.junit.After;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -23,7 +24,7 @@ public class TestWithSeleniumPages {
     private static final String trueLink = "hromadske.ua";
     private static final String err = "Мы заметили несколько необычных попыток входа в вашу учетную запись. С целью обеспечения ее безопасности просим вас ввести свой номер телефона или имя пользователя, чтобы подтвердить, что это действительно вы.";
     private static final String wrongData = "Введенные адрес электронной почты и пароль не совпадают с сохраненными в нашей базе данных. Проверьте правильность введенных данных и повторите попытку.";
-    private static final long timeOutInSeconds = 10;
+    private static final long timeOutInSeconds = 30;
 
     @Before
     public void SetUp() {
@@ -37,7 +38,6 @@ public class TestWithSeleniumPages {
 
     @Test
     public void testAuthName() {
-
 
         WebDriver driver =  new ChromeDriver();
         WebDriverWait waiter = createWebDriverWait(driver);
