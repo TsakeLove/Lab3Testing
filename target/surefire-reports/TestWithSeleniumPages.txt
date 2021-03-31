@@ -1,9 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: TestWithSeleniumPages
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.243 sec <<< FAILURE! - in TestWithSeleniumPages
-testAuthName(TestWithSeleniumPages)  Time elapsed: 0.126 sec  <<< ERROR!
-java.lang.IllegalStateException: The path to the driver executable must be set by the webdriver.chrome.driver system property; for more information, see https://github.com/SeleniumHQ/selenium/wiki/ChromeDriver. The latest version can be downloaded from http://chromedriver.storage.googleapis.com/index.html
-	at TestWithSeleniumPages.createWebDriver(TestWithSeleniumPages.java:131)
-	at TestWithSeleniumPages.testAuthName(TestWithSeleniumPages.java:42)
-
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 22.8 sec - in TestWithSeleniumPages

@@ -39,7 +39,7 @@ public class TestWithSeleniumPages {
     public void testAuthName() {
 
 
-        WebDriver driver = createWebDriver();
+        WebDriver driver =  new ChromeDriver();
         WebDriverWait waiter = createWebDriverWait(driver);
 
         LoginPage loginPage = new LoginPage(driver, waiter);
