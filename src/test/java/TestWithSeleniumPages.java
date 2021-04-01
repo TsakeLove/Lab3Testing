@@ -56,7 +56,7 @@ public class TestWithSeleniumPages {
         waiter.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#__layout > div > div.page__content.page__content--inverse > div.product-view > div.p-view__header.product-view__header > h1")));
         String a = driver.findElement(By.xpath("//*[@id=\"__layout\"]/div/div[2]/div[1]/div[1]/h1")).getText();
 
-        Assert.assertNotEquals(a, "!Xiaomi Mi 11 8/256GB Horizon Blue");
+        Assert.assertNotEquals(a, "Xiaomi Mi 11 8/256GB Horizon Blue");
 
         driver.quit();
     }
