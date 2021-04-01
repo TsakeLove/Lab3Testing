@@ -24,7 +24,7 @@ public class TestWithSeleniumPages {
     private static final String trueLink = "hromadske.ua";
     private static final String err = "Мы заметили несколько необычных попыток входа в вашу учетную запись. С целью обеспечения ее безопасности просим вас ввести свой номер телефона или имя пользователя, чтобы подтвердить, что это действительно вы.";
     private static final String wrongData = "Введенные адрес электронной почты и пароль не совпадают с сохраненными в нашей базе данных. Проверьте правильность введенных данных и повторите попытку.";
-    private static final long timeOutInSeconds = 10;
+    private static final long timeOutInSeconds = 20;
     private WebDriverWait waiter;
     private WebDriver driver;
     @Before
