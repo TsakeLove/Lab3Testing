@@ -46,10 +46,10 @@ public class TestWithSeleniumPages {
         loginPage.loginValidUser(email, password, email2);
 
 
-        loginPage.loginCheck();
+        //loginPage.loginCheck();
 
         String name = driver.findElement(By.cssSelector("#react-root > div > div > div.css-1dbjc4n.r-18u37iz.r-13qz1uu.r-417010 > main > div > div > div > div > div > div.css-1dbjc4n.r-aqfbo4.r-14lw9ot.r-j7yic.r-rull8r.r-qklmqi.r-gtdqiz.r-1gn8etr.r-1g40b8q > div.css-1dbjc4n.r-1loqt21.r-136ojw6 > div > div > div > div > div.css-1dbjc4n.r-16y2uox.r-1wbh5a2.r-1pi2tsx.r-1777fci > div > h2 > div > div > div > span.css-901oao.css-16my406.css-bfa6kz.r-18jsvk2.r-poiln3.r-1vr29t4.r-bcqeeo.r-3s2u2q.r-qvutc0 > span > span")).getText();
-        Assert.assertEquals("Data Test", "Data Test");
+        Assert.assertEquals(name, "Data Test");
         driver.quit();
     }
 
