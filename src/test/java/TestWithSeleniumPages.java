@@ -37,10 +37,10 @@ public class TestWithSeleniumPages {
 
     @Test
     public void testAuthName() {
-
-        WebDriver driver =  new ChromeDriver();
-        //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        WebDriverWait waiter = createWebDriverWait(driver);
+//
+//        WebDriver driver =  new ChromeDriver();
+//        //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+//        WebDriverWait waiter = createWebDriverWait(driver);
 
         LoginPage loginPage = new LoginPage(driver, waiter);
         loginPage.loginValidUser(email, password, email2);
