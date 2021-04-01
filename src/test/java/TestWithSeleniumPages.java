@@ -80,13 +80,13 @@ public class TestWithSeleniumPages {
 //
     @Test
     public void testLinkText() {
+        //*[@id="p-comments"]/div/div[1]/div[2]/div[4]/button[2]
         driver.get("https://allo.ua/ua/products/mobile/xiaomi-mi-11-8-256gb-horizon-blue.html");
         waiter.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"product-buy-button\"]")));
-        driver.findElement(By.xpath("//*[@id=\"product-buy-button\"]")).click();
-        waiter.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[4]/div/div/div[3]/div/div[1]/div/div/div[1]/div/ul/li/div/div[1]/div[2]/div[2]/div[2]/div")));
-        String a = driver.findElement(By.xpath(" /html/body/div[4]/div/div/div[3]/div/div[1]/div/div/div[1]/div/ul/li/div/div[1]/div[2]/div[1]/a/p/span")).getText();
-
-        Assert.assertEquals(a, "Xiaomi Mi 11 8/256GB Horizon Blue");
+        driver.findElement(By.xpath("//*[@id=\"__layout\"]/div/div[2]/div[1]/div[1]/div/div[2]/div/a/span")).click();
+        waiter.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"p-comments\"]/div/div[1]/div[2]/div[1]/div[1]")));
+        String a = driver.findElement(By.xpath("//*[@id=\"p-comments\"]/div/div[2]/div/div[1]/div[2]/div[2]/p")).getText();
+        Assert.assertEquals(a, "Чи є в цьому смартфоні сервіси гугл?");
         driver.quit();
     }
 //
