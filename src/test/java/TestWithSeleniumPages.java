@@ -25,16 +25,13 @@ public class TestWithSeleniumPages {
     private static final String err = "Мы заметили несколько необычных попыток входа в вашу учетную запись. С целью обеспечения ее безопасности просим вас ввести свой номер телефона или имя пользователя, чтобы подтвердить, что это действительно вы.";
     private static final String wrongData = "Введенные адрес электронной почты и пароль не совпадают с сохраненными в нашей базе данных. Проверьте правильность введенных данных и повторите попытку.";
     private static final long timeOutInSeconds = 30;
-
+    private WebDriverWait waiter;
+    private WebDriver driver;
     @Before
-    public void SetUp() {
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--no-sandbox");
-        options.addArguments("--disable-dev-shm-usage");
-        options.addArguments("--headless");
-        System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver");
-
-    //    webDriver.manage().window().maximize();
+    public void start() {
+        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriverlinux");
+        driver = createWebDriver();
+        waiter = createWebDriverWait(driver);
         System.out.println("Test start");
     }
 
@@ -42,7 +39,7 @@ public class TestWithSeleniumPages {
     public void testAuthName() {
 
         WebDriver driver =  new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         WebDriverWait waiter = createWebDriverWait(driver);
 
         LoginPage loginPage = new LoginPage(driver, waiter);
@@ -127,6 +124,7 @@ public class TestWithSeleniumPages {
 
     @After
     public void close() {
+        driver.quit();
         System.out.println("Test end");
     }
 
@@ -139,10 +137,14 @@ public class TestWithSeleniumPages {
     }
 
     private ChromeOptions createChromeOptions() {
+
         Map<String, Object> prefs = new HashMap<>();
         prefs.put("profile.default_content_setting_values.notifications", 2);
         ChromeOptions options = new ChromeOptions();
         options.setExperimentalOption("prefs", prefs);
+        options.addArguments("headless");
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
         return options;
     }
 }
