@@ -68,8 +68,8 @@ public class TestWithSeleniumPages {
         waiter.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"product-buy-button\"]")));
         driver.findElement(By.xpath("//*[@id=\"__layout\"]/div/div[2]/div[1]/div[1]/div/div[2]/div/a/span")).click();
         waiter.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"p-comments\"]/div/div[1]/div[2]/div[1]/div[1]")));
-        String a = driver.findElement(By.xpath("//*[@id=\"p-comments\"]/div/div[2]/div/div[1]/div[2]/div[2]/p")).getText();
-        Assert.assertEquals(a, "Чи є в цьому смартфоні сервіси гугл?");
+        String a = driver.findElement(By.xpath("//*[@id=\"p-comments\"]/div/div[2]/div/div[1]/div[1]/div[1]/h4")).getText();
+        Assert.assertEquals(a, "Денис ");
         driver.quit();
     }
 
