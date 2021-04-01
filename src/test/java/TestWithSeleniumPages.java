@@ -50,56 +50,56 @@ public class TestWithSeleniumPages {
         driver.quit();
     }
 
-//    @Test
-//    public void testLastTwit() {
-//        driver.get("https://allo.ua/ua/products/mobile/xiaomi-mi-11-8-256gb-horizon-blue.html");
-//        waiter.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#__layout > div > div.page__content.page__content--inverse > div.product-view > div.p-view__header.product-view__header > h1")));
-//
-//        Assert.assertNotEquals("Hello", "!Hello");
-//
-//        driver.quit();
-//    }
-//
-//    @Test
-//    public void testLinkText() {
-//        //*[@id="p-comments"]/div/div[1]/div[2]/div[4]/button[2]
-//        driver.get("https://allo.ua/ua/products/mobile/xiaomi-mi-11-8-256gb-horizon-blue.html");
-//        waiter.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"product-buy-button\"]")));
-//        driver.findElement(By.xpath("//*[@id=\"__layout\"]/div/div[2]/div[1]/div[1]/div/div[2]/div/a/span")).click();
-//        waiter.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"p-comments\"]/div/div[1]/div[2]/div[1]/div[1]")));
-//        String a = driver.findElement(By.xpath("//*[@id=\"p-comments\"]/div/div[2]/div/div[1]/div[2]/div[2]/p")).getText();
-//        Assert.assertEquals(a, "Чи є в цьому смартфоні сервіси гугл?");
-//        driver.quit();
-//    }
-//
-//    @Test
-//    public void testErrorText() {
-//        driver.get("https://allo.ua/ua/products/mobile/xiaomi-mi-11-8-256gb-horizon-blue.html");
-//        waiter.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"product-buy-button\"]")));
-//        driver.findElement(By.xpath("//*[@id=\"__layout\"]/div/div[2]/div[1]/div[1]/div/div[2]/div/a/span")).click();
-//        waiter.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"p-comments\"]/div/div[1]/div[2]/div[1]/div[1]")));
-//        String a = driver.findElement(By.xpath("//*[@id=\"p-comments\"]/div/div[1]/div[2]/div[1]/div[1]")).getText();
-//
-//        Assert.assertEquals(a, "4.4");
-//
-//        driver.quit();
-//    }
+    @Test
+    public void testLastTwit() {
+        driver.get("https://allo.ua/ua/products/mobile/xiaomi-mi-11-8-256gb-horizon-blue.html");
+        waiter.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#__layout > div > div.page__content.page__content--inverse > div.product-view > div.p-view__header.product-view__header > h1")));
 
-//    @Test
-//    public void testSignUpWithWrongEmail() {
-//
-//        driver.get("https://allo.ua");
-//        waiter.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"search-form__input\"]")));
-//        driver.findElement(By.xpath("//*[@id=\"search-form__input\"]")).click();
-//        driver.findElement(By.xpath("//*[@id=\"search-form__input\"]")).sendKeys("Xiaomi Mi 11 8/256GB Horizon Blue");
-//        driver.findElement(By.xpath("//*[@id=\"__layout\"]/div/div[2]/div[1]/div[3]/div/ul/li[4]/div/div/form/button[3]")).click();
-//        waiter.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"__layout\"]/div/div[2]/h1")));
-//        String a = driver.findElement(By.xpath("//*[@id=\"filter_id-1822\"]/p/span")).getText();
-//
-//
-//        Assert.assertEquals(a, "(1)");
-//        driver.quit();
-//    }
+        Assert.assertNotEquals("Hello", "!Hello");
+
+        driver.quit();
+    }
+
+    @Test
+    public void testLinkText() {
+        //*[@id="p-comments"]/div/div[1]/div[2]/div[4]/button[2]
+        driver.get("https://allo.ua/ua/products/mobile/xiaomi-mi-11-8-256gb-horizon-blue.html");
+        waiter.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"product-buy-button\"]")));
+        driver.findElement(By.xpath("//*[@id=\"__layout\"]/div/div[2]/div[1]/div[1]/div/div[2]/div/a/span")).click();
+        waiter.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"p-comments\"]/div/div[1]/div[2]/div[1]/div[1]")));
+        String a = driver.findElement(By.xpath("//*[@id=\"p-comments\"]/div/div[2]/div/div[1]/div[2]/div[2]/p")).getText();
+        Assert.assertEquals(a, "Чи є в цьому смартфоні сервіси гугл?");
+        driver.quit();
+    }
+
+    @Test
+    public void testErrorText() {
+        driver.get("https://allo.ua/ua/products/mobile/xiaomi-mi-11-8-256gb-horizon-blue.html");
+        waiter.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"product-buy-button\"]")));
+        driver.findElement(By.xpath("//*[@id=\"__layout\"]/div/div[2]/div[1]/div[1]/div/div[2]/div/a/span")).click();
+        waiter.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"p-comments\"]/div/div[1]/div[2]/div[1]/div[1]")));
+        String a = driver.findElement(By.xpath("//*[@id=\"p-comments\"]/div/div[1]/div[2]/div[1]/div[1]")).getText();
+
+        Assert.assertEquals(a, "4.4");
+
+        driver.quit();
+    }
+
+    @Test
+    public void testSignUpWithWrongEmail() {
+
+        driver.get("https://allo.ua");
+        waiter.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"search-form__input\"]")));
+        driver.findElement(By.xpath("//*[@id=\"search-form__input\"]")).click();
+        driver.findElement(By.xpath("//*[@id=\"search-form__input\"]")).sendKeys("Xiaomi Mi 11 8/256GB Horizon Blue");
+        driver.findElement(By.xpath("//*[@id=\"__layout\"]/div/div[2]/div[1]/div[3]/div/ul/li[4]/div/div/form/button[3]")).click();
+        waiter.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"__layout\"]/div/div[2]/h1")));
+        String a = driver.findElement(By.xpath("//*[@id=\"filter_id-1822\"]/p/span")).getText();
+
+
+        Assert.assertEquals(a, "(1)");
+        driver.quit();
+    }
 
 
     @After
