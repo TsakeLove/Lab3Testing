@@ -8,11 +8,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import pages.LoginPage;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.concurrent.TimeUnit;
+
 
 
 public class TestWithSeleniumPages {
@@ -55,23 +54,6 @@ public class TestWithSeleniumPages {
     public void testLastTwit() {
         driver.get("https://allo.ua/ua/products/mobile/xiaomi-mi-11-8-256gb-horizon-blue.html");
         waiter.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#__layout > div > div.page__content.page__content--inverse > div.product-view > div.p-view__header.product-view__header > h1")));
-
-        //        WebDriver driver = createWebDriver();
-//        WebDriverWait waiter = createWebDriverWait(driver);
-//
-//        LoginPage loginPage = new LoginPage(driver, waiter);
-//        loginPage.loginValidUser(email, password, email2);
-//
-//        // go to main page
-//        waiter.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("   //*[@id=\"react-root\"]/div/div/div[2]/header/div/div/div/div[1]/div[2]/nav/a[1]")));
-//        driver.findElement(By.xpath("//*[@id=\"react-root\"]/div/div/div[2]/header/div/div/div/div[1]/div[2]/nav/a[1]")).click();
-//        waiter.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"react-root\"]/div/div/div[2]/main/div/div/div/div/div/div[4]/div/div/section/div/div/div/div/div/div/div[2]/div[1]/div[1]/a/div/div[1]/div[1]/span/span")));
-//        //new post
-//        String hello = driver.findElement(By.xpath("//*[@id=\"react-root\"]/div/div/div[2]/main/div/div/div/div/div/div[4]/div/div/section/div/div/div/div/div/div/div[2]/div[1]/div[1]/a/div/div[1]/div[1]/span/span")).getText();
-//        driver.findElement(By.xpath("//*[@id=\"react-root\"]/div/div/div[2]/main/div/div/div/div/div/div[2]/div/div[2]/div[1]/div/div/div/div[2]/div[1]/div/div/div/div/div/div/div/div/div/div[1]/div/div/div/div[2]/div/div/div/div")).sendKeys("Hello, " + hello);
-//        driver.findElement(By.xpath("//*[@id=\"react-root\"]/div/div/div[2]/main/div/div/div/div/div/div[2]/div/div[2]/div[1]/div/div/div/div[2]/div[4]/div/div/div[2]/div[3]")).click();
-//        waiter.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"react-root\"]/div/div/div[2]/main/div/div/div/div/div/div[4]/div/div/section/div/div/div[1]/div/div/article/div/div/div/div[2]/div[2]/div[2]/div[1]/div/span")));
-//        String lastTwit = driver.findElement(By.xpath("//*[@id=\"react-root\"]/div/div/div[2]/main/div/div/div/div/div/div[4]/div/div/section/div/div/div[1]/div/div/article/div/div/div/div[2]/div[2]/div[2]/div[1]/div/span")).getText();
 
         Assert.assertNotEquals("Hello", "!Hello");
 
