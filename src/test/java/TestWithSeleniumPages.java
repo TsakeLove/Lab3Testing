@@ -56,7 +56,7 @@ public class TestWithSeleniumPages {
         waiter.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#__layout > div > div.page__content.page__content--inverse > div.product-view > div.p-view__header.product-view__header > h1")));
         String a = driver.findElement(By.xpath("//*[@id=\"__layout\"]/div/div[2]/div[1]/div[1]/h1")).getText();
 
-        Assert.assertNotEquals(a, "Xiaomi Mi 11 8/256GB Horizon Blue");
+        Assert.assertNotEquals(a, "!Xiaomi Mi 11 8/256GB Horizon Blue");
 
         driver.quit();
     }
@@ -68,8 +68,8 @@ public class TestWithSeleniumPages {
         waiter.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"product-buy-button\"]")));
         driver.findElement(By.xpath("//*[@id=\"__layout\"]/div/div[2]/div[1]/div[1]/div/div[2]/div/a/span")).click();
         waiter.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"p-comments\"]/div/div[1]/div[2]/div[1]/div[1]")));
-        String a = driver.findElement(By.xpath("//*[@id=\"p-comments\"]/div/div[2]/div/div[1]/div[1]/div[1]/h4")).getText();
-        Assert.assertEquals(a, "Денис ");
+        String a = driver.findElement(By.xpath("//*[@id=\"p-comments\"]/div/div[2]/div/div[1]/div[2]/div[2]/p")).getText();
+        Assert.assertEquals(a, "123");
         driver.quit();
     }
 
